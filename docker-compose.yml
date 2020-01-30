@@ -12,7 +12,7 @@ services:
       - ./jenkins_vol:/jenkins
 
   sonarqube:
-    image: sonarqube
+    image: sonarqube:7.9.2-community
     container_name: sonarqube
     ports:
       - 9000:9000
