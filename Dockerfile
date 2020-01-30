@@ -28,7 +28,7 @@ RUN wget --no-verbose -O /tmp/apache-maven-3.6.3.tar.gz http://archive.apache.or
 # install maven
 RUN tar xzf /tmp/apache-maven-3.6.3.tar.gz -C /opt/; \
   ln -s /opt/apache-maven-3.6.3 /opt/maven; \
-  ln -s /opt/maven/bin/mvn /usr/local/bin; \a
+  ln -s /opt/maven/bin/mvn /usr/local/bin; \
   rm -f /tmp/apache-maven-3.6.3.tar.gz
 ENV MAVEN_HOME /opt/maven
 
