@@ -1,5 +1,17 @@
 version: "3"
 services:
+
+  jenkins:
+    build: .
+    container_name: jenkins
+    ports:
+      - 8080:8080
+      - 50000:50000
+    networks:
+      - devsecops-network
+    volumes:
+      - ./jenkins_vol:/jenkins
+      
   sonarqube:
     image: sonarqube:7.9.2-community
     container_name: sonarqube
