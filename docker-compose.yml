@@ -11,7 +11,7 @@ services:
       - devsecops-network
     volumes:
       - ./jenkins_vol:/jenkins
-      - /var/run/docker.sock:/var/run/docker.sock jenkins-docker
+      - /var/run/docker.sock:/var/run/docker.sock
       
   sonarqube:
     image: sonarqube:7.9.2-community
