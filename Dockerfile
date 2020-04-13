@@ -32,6 +32,13 @@ RUN tar xzf /tmp/apache-maven-3.6.3.tar.gz -C /opt/; \
   rm -f /tmp/apache-maven-3.6.3.tar.gz
 ENV MAVEN_HOME /opt/maven
 
+# install docker client
+RUN apt update; \
+  apt remove docker docker-engine docker.io; \
+  apt install docker.io; \
+  systemctl start docker; \
+  systemctl enable docker
+
 # copy jenkins war file to the container
 ADD http://mirrors.jenkins.io/war-stable/latest/jenkins.war /opt/jenkins.war
 RUN chmod 644 /opt/jenkins.war
