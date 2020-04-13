@@ -34,8 +34,7 @@ ENV MAVEN_HOME /opt/maven
 
 # install docker client
 RUN apt update; \
-  apt remove docker docker-engine docker.io; \
-  apt install docker.io; \
+  apt install -y docker.io; \
   systemctl start docker; \
   systemctl enable docker
 
