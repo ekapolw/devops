@@ -37,6 +37,12 @@ RUN apt update; \
   apt install -y docker.io; \
   systemctl start docker; \
   systemctl enable docker
+  
+# install newman
+RUN apt update; \
+  apt install -y nodejs; \
+  apt install -y npm; \
+  npm install -g newman
 
 # copy jenkins war file to the container
 ADD http://mirrors.jenkins.io/war-stable/latest/jenkins.war /opt/jenkins.war
