@@ -32,6 +32,12 @@ RUN tar xzf /tmp/apache-maven-3.6.3.tar.gz -C /opt/; \
   rm -f /tmp/apache-maven-3.6.3.tar.gz
 ENV MAVEN_HOME /opt/maven
 
+# install nvm
+RUN apt update; \
+  apt install nodejs; \
+  apt install npm; \
+  npm install -g newman
+
 # install docker client
 RUN apt update; \
   apt install -y docker.io; \
